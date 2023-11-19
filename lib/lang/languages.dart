@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/lang/zh_cn.dart';
+import 'package:flutter_admin/lang/zh_cn.dart';
 import 'package:get/get.dart';
 
 import 'en_us.dart';

@@ -34,7 +34,7 @@ Ctrl + . - Wrap or Extract Widget
 - Dart Data Class generator
 - Bloc
 
-# flutter_boilerplate
+# flutter_admin
 
 # Google Authentication
 

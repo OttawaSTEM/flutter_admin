@@ -4,9 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../drawer/controller/drawer_controller.dart';
 import '../../drawer/ui/drawer_ui.dart';
+import '../../../widgets/custom_button.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final SideDrawerController controller = Get.put(SideDrawerController());
 
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           'Home Page'.tr,
           style: GoogleFonts.roboto(
@@ -74,7 +76,7 @@ class HomePage extends StatelessWidget {
                 )),
               )),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             SizedBox(
               height: 50,
               child: (Center(
@@ -94,7 +96,7 @@ class HomePage extends StatelessWidget {
                 )),
               )),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             SizedBox(
               height: 50,
               child: (Center(
@@ -114,7 +116,7 @@ class HomePage extends StatelessWidget {
                 )),
               )),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
             SizedBox(
               height: 50,
               child: (Center(
@@ -173,6 +175,13 @@ class HomePage extends StatelessWidget {
                   },
                 )),
               )),
+            ),
+            const SizedBox(height: 20),
+            CustomButton(
+              platform: 'Ottawa STEM Club',
+              onPressed: () {
+                // Button on pressed action
+              },
             ),
           ],
         ),
