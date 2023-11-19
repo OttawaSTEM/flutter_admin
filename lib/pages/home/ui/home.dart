@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBarWidget(
-        title: "Home".tr,
+        title: 'Home'.tr,
       ),
       drawer: NavDrawer(),
       body: SingleChildScrollView(

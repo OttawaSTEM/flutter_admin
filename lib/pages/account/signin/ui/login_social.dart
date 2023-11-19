@@ -5,9 +5,7 @@ import 'signup.dart';
 import '../controller/auth_controller.dart';
 
 class LoginSocial extends StatelessWidget {
-  const LoginSocial({
-    Key? key,
-  }) : super(key: key);
+  const LoginSocial({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -107,7 +107,7 @@ flutter:
     - assets/ca/
     - assets/images/
     - assets/images/core/
-    - assets/images/robot/
+    - assets/images/profile/
     - assets/google_fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
