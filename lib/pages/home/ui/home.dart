@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../drawer/controller/drawer_controller.dart';
 import '../../drawer/ui/drawer_ui.dart';
 import '../../../widgets/custom_button.dart';
+import '../../../widgets/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -15,22 +16,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        title: Text(
-          'Home Page'.tr,
-          style: GoogleFonts.roboto(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-        leading: IconButton(
-            onPressed: () {
-              controller.updateLoginStatus();
-              _scaffoldKey.currentState!.openDrawer();
-            },
-            icon: const Icon(Icons.menu)),
+      appBar: AppBarWidget(
+        title: "Home".tr,
       ),
       drawer: NavDrawer(),
       body: SingleChildScrollView(
