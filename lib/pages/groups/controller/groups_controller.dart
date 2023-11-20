@@ -40,7 +40,7 @@ class GroupsController extends GetxController {
           size: 40,
         ),
       );
-      Get.to(() => HomePage());
+      Get.to(() => const HomePage());
     }
   }
 }

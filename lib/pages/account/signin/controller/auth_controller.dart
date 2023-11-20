@@ -41,7 +41,7 @@ class AuthController extends GetxController {
         // Login succeed, get token
         storage.write("token", data['key']);
         authStatus.value = true;
-        Get.to(() => HomePage());
+        Get.to(() => const HomePage());
         snackbarMsg(
           title: 'Login'.tr,
           message: 'Login succeed.'.tr,
@@ -79,7 +79,7 @@ class AuthController extends GetxController {
         );
       } else if (data['detail'] == 'Password reset e-mail has been sent.') {
         // Password reset succeed
-        Get.to(() => HomePage());
+        Get.to(() => const HomePage());
         snackbarMsg(
           title: 'Password Reset'.tr,
           message: 'Password reset e-mail has been sent.'.tr,
@@ -91,7 +91,7 @@ class AuthController extends GetxController {
         );
       } else if (data['detail'] == 'Verification e-mail sent.') {
         // Registration succeed
-        Get.to(() => HomePage());
+        Get.to(() => const HomePage());
         snackbarMsg(
           title: 'Sig up'.tr,
           message: ('Succeed.'.tr) + (' ') + ('Verification e-mail sent.'.tr),
