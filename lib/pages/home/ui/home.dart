@@ -15,9 +15,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var screenSize = MediaQuery.of(context).size;
-    // double width = screenSize.width;
     // double height = screenSize.height;
+    // double sideMenuWidth = 0;
+    // if (screenWidth >= 500)
+    //   sideMenuWidth = 100;
+    // else
+    //   sideMenuWidth = 50;
 
     return Scaffold(
       // key: _scaffoldKey,
@@ -44,8 +47,9 @@ class HomePage extends StatelessWidget {
               // mainAxisSize: MainAxisSize.max,
               // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                const Flexible(
-                  child: SideMenu(),
+                SizedBox(
+                  width: displayWidth(context),
+                  child: const SideMenu(),
                 ),
                 Expanded(
                   child: PageView(
@@ -104,22 +108,31 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const <Widget>[
-        ListTile(title: Text("Menu A"), dense: true),
-        ListTile(title: Text("Menu B"), dense: true),
-        ListTile(title: Text("Menu C"), dense: true),
-        ListTile(title: Text("Menu D"), dense: true),
-        ListTile(title: Text("Menu E"), dense: true),
-        ListTile(title: Text("Menu F"), dense: true),
-        ListTile(title: Text("Menu G"), dense: true),
-        ListTile(title: Text("Menu H"), dense: true),
-        ListTile(title: Text("Menu I"), dense: true),
-        ListTile(title: Text("Menu J"), dense: true),
-        ListTile(title: Text("Menu K"), dense: true),
-        ListTile(title: Text("Menu L"), dense: true),
-        ListTile(title: Text("Menu M"), dense: true),
-        ListTile(title: Text("Menu M"), dense: true),
+      children: <Widget>[
+        ListTile(
+          onTap: () {},
+          horizontalTitleGap: 0.0,
+          leading: const Icon(
+            Icons.audiotrack,
+            size: 30.0,
+          ),
+          title: const Text(
+            'title',
+          ),
+        ),
       ],
     );
+  }
+}
+
+double displayWidth(BuildContext context) {
+  var screenSize = MediaQuery.of(context).size;
+  double screenWidth = screenSize.width;
+  if (screenWidth >= 500 && screenWidth <= 800) {
+    return 100.0;
+  } else if (screenWidth < 500) {
+    return 0.0;
+  } else {
+    return 200.0;
   }
 }
