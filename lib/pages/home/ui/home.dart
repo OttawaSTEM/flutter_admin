@@ -3,10 +3,15 @@ import 'package:get/get.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 
+import '../../../constants/sizes.dart';
 // import '../../drawer/controller/drawer_controller.dart';
 // import '../../drawer/ui/drawer_ui.dart';
 // import '../../../widgets/custom_button.dart';
 import '../../../widgets/app_bar.dart';
+
+import 'package:logger/logger.dart';
+
+var logger = Logger();
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,54 +20,47 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double height = screenSize.height;
-    // double sideMenuWidth = 0;
-    // if (screenWidth >= 500)
-    //   sideMenuWidth = 100;
-    // else
-    //   sideMenuWidth = 50;
-
     return Scaffold(
-      // key: _scaffoldKey,
-      // key: context.read<MenuAppController>().scaffoldKey,
       appBar: AppBarWidget(
         title: 'Home'.tr,
       ),
-      // drawer: const SideMenu(),
-      // key: _scaffoldKey.currentState.openDrawer(),
-      // drawer: Drawer(
-      //     child: SingleChildScrollView(
-      //         // Drawer content here
-      //         // design your own drawer menu here.
-      //         child: Container(
-      //   color: Colors.lightGreen[100],
-      //   height: MediaQuery.of(context).size.height,
-      //   width: double.infinity,
-      // ))),
-      // body: SingleChildScrollView(
       body: Column(
         children: <Widget>[
-          Expanded(
-            child: Row(
-              // mainAxisSize: MainAxisSize.max,
-              // crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                SizedBox(
-                  width: displayWidth(context),
-                  child: const SideMenu(),
-                ),
-                Expanded(
-                  child: PageView(
-                    children: const <Widget>[
-                      MainContent(1),
-                      MainContent(2),
-                      MainContent(3),
+          (screenWidth(context) == 0.0)
+              ? Expanded(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: PageView(
+                          children: const <Widget>[
+                            MainContent(1),
+                            MainContent(2),
+                            MainContent(3),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
-                ),
-              ],
-            ),
-          ),
+                )
+              : Expanded(
+                  child: Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: screenWidth(context),
+                        child: const SideMenu(),
+                      ),
+                      Expanded(
+                        child: PageView(
+                          children: const <Widget>[
+                            MainContent(1),
+                            MainContent(2),
+                            MainContent(3),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
         ],
 
         // child: Column(
@@ -109,15 +107,176 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        ListTile(
-          onTap: () {},
-          horizontalTitleGap: 0.0,
-          leading: const Icon(
-            Icons.audiotrack,
-            size: 30.0,
+        // ListTile(
+        //   onTap: () {},
+        //   horizontalTitleGap: 0.0,
+        //   leading: const Icon(
+        //     Icons.dashboard_outlined,
+        //     size: sideMenuIconSize,
+        //   ),
+        //   title: Text(
+        //     'Dashboard'.tr,
+        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+        //           color: Theme.of(context).colorScheme.primary,
+        //         ),
+        //   ),
+        // ),
+        // ListTile(
+        //   onTap: () {},
+        //   horizontalTitleGap: 0.0,
+        //   leading: const Icon(
+        //     Icons.task_outlined,
+        //     size: sideMenuIconSize,
+        //   ),
+        //   title: Text(
+        //     'Tasks'.tr,
+        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+        //           color: Theme.of(context).colorScheme.primary,
+        //         ),
+        //   ),
+        // ),
+        // ListTile(
+        //   onTap: () {},
+        //   horizontalTitleGap: 0.0,
+        //   leading: const Icon(
+        //     Icons.document_scanner_outlined,
+        //     size: sideMenuIconSize,
+        //   ),
+        //   title: Text(
+        //     'Documents'.tr,
+        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+        //           color: Theme.of(context).colorScheme.primary,
+        //         ),
+        //   ),
+        // ),
+        // ListTile(
+        //   onTap: () {},
+        //   horizontalTitleGap: 0.0,
+        //   leading: const Icon(
+        //     Icons.settings,
+        //     size: sideMenuIconSize,
+        //   ),
+        //   title: Text(
+        //     'Settings'.tr,
+        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+        //           color: Theme.of(context).colorScheme.primary,
+        //         ),
+        //   ),
+        // ),
+        Container(
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListTile(
+              onTap: () {},
+              horizontalTitleGap: 0.0,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: Text(
+                'Settings'.tr,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ),
           ),
-          title: const Text(
-            'title',
+        ),
+        Container(
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListTile(
+              onTap: () {},
+              horizontalTitleGap: 0.0,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: Text(
+                'Settings'.tr,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListTile(
+              onTap: () {},
+              horizontalTitleGap: 0.0,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: Text(
+                'Settings'.tr,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListTile(
+              onTap: () {},
+              horizontalTitleGap: 0.0,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: Text(
+                'Settings'.tr,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListTile(
+              onTap: () {},
+              horizontalTitleGap: 0.0,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: Text(
+                'Settings'.tr,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          // height: double.infinity,
+          height: screenHeight(context) - 280,
+          child: Align(
+            alignment: Alignment.bottomLeft,
+            child: ListTile(
+              onTap: () {},
+              horizontalTitleGap: 0.0,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: Text(
+                'Settings'.tr,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+              ),
+            ),
           ),
         ),
       ],
@@ -125,14 +284,21 @@ class SideMenu extends StatelessWidget {
   }
 }
 
-double displayWidth(BuildContext context) {
+double screenWidth(BuildContext context) {
   var screenSize = MediaQuery.of(context).size;
   double screenWidth = screenSize.width;
-  if (screenWidth >= 500 && screenWidth <= 800) {
-    return 100.0;
-  } else if (screenWidth < 500) {
-    return 0.0;
+  if (screenWidth >= screenMedium && screenWidth <= screenLarge) {
+    return sideMenuScreenIconWidth;
+  } else if (screenWidth < screenMedium) {
+    return sideMenuScreenZeroWidth;
   } else {
-    return 200.0;
+    return sideMenuScreenFullWidth;
   }
+}
+
+double screenHeight(BuildContext context) {
+  var screenSize = MediaQuery.of(context).size;
+  double screenHeight = screenSize.height;
+  // logger.i(screenHeight);
+  return screenHeight;
 }
