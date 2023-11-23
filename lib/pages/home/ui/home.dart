@@ -107,175 +107,91 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        // ListTile(
-        //   onTap: () {},
-        //   horizontalTitleGap: 0.0,
-        //   leading: const Icon(
-        //     Icons.dashboard_outlined,
-        //     size: sideMenuIconSize,
-        //   ),
-        //   title: Text(
-        //     'Dashboard'.tr,
-        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-        //           color: Theme.of(context).colorScheme.primary,
-        //         ),
-        //   ),
-        // ),
-        // ListTile(
-        //   onTap: () {},
-        //   horizontalTitleGap: 0.0,
-        //   leading: const Icon(
-        //     Icons.task_outlined,
-        //     size: sideMenuIconSize,
-        //   ),
-        //   title: Text(
-        //     'Tasks'.tr,
-        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-        //           color: Theme.of(context).colorScheme.primary,
-        //         ),
-        //   ),
-        // ),
-        // ListTile(
-        //   onTap: () {},
-        //   horizontalTitleGap: 0.0,
-        //   leading: const Icon(
-        //     Icons.document_scanner_outlined,
-        //     size: sideMenuIconSize,
-        //   ),
-        //   title: Text(
-        //     'Documents'.tr,
-        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-        //           color: Theme.of(context).colorScheme.primary,
-        //         ),
-        //   ),
-        // ),
-        // ListTile(
-        //   onTap: () {},
-        //   horizontalTitleGap: 0.0,
-        //   leading: const Icon(
-        //     Icons.settings,
-        //     size: sideMenuIconSize,
-        //   ),
-        //   title: Text(
-        //     'Settings'.tr,
-        //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-        //           color: Theme.of(context).colorScheme.primary,
-        //         ),
-        //   ),
-        // ),
-        Container(
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: ListTile(
-              onTap: () {},
-              horizontalTitleGap: 0.0,
-              leading: const Icon(
-                Icons.settings,
-                size: sideMenuIconSize,
-              ),
-              title: Text(
-                'Settings'.tr,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
-            ),
+        ListTile(
+          onTap: () {},
+          horizontalTitleGap: -10.0,
+          leading: const Icon(
+            Icons.settings,
+            size: sideMenuIconSize,
           ),
+          title: (screenWidth(context) > sideMenuScreenIconWidth)
+              ? Text(
+                  'Settings'.tr,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                )
+              : null,
         ),
-        Container(
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: ListTile(
-              onTap: () {},
-              horizontalTitleGap: 0.0,
-              leading: const Icon(
-                Icons.settings,
-                size: sideMenuIconSize,
-              ),
-              title: Text(
-                'Settings'.tr,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
-            ),
+        ListTile(
+          onTap: () {},
+          horizontalTitleGap: -10.0,
+          leading: const Icon(
+            Icons.settings,
+            size: sideMenuIconSize,
           ),
+          title: (screenWidth(context) > sideMenuScreenIconWidth)
+              ? Text(
+                  'Settings'.tr,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                )
+              : null,
         ),
-        Container(
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: ListTile(
-              onTap: () {},
-              horizontalTitleGap: 0.0,
-              leading: const Icon(
-                Icons.settings,
-                size: sideMenuIconSize,
-              ),
-              title: Text(
-                'Settings'.tr,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
-            ),
+        ListTile(
+          onTap: () {},
+          horizontalTitleGap: -10.0,
+          leading: const Icon(
+            Icons.settings,
+            size: sideMenuIconSize,
           ),
+          title: (screenWidth(context) > sideMenuScreenIconWidth)
+              ? Text(
+                  'Settings'.tr,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                )
+              : null,
         ),
-        Container(
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: ListTile(
-              onTap: () {},
-              horizontalTitleGap: 0.0,
-              leading: const Icon(
-                Icons.settings,
-                size: sideMenuIconSize,
-              ),
-              title: Text(
-                'Settings'.tr,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
-            ),
+        ListTile(
+          onTap: () {},
+          horizontalTitleGap: -10.0,
+          leading: const Icon(
+            Icons.settings,
+            size: sideMenuIconSize,
           ),
+          title: (screenWidth(context) > sideMenuScreenIconWidth)
+              ? Text(
+                  'Settings'.tr,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                )
+              : null,
         ),
-        Container(
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: ListTile(
-              onTap: () {},
-              horizontalTitleGap: 0.0,
-              leading: const Icon(
-                Icons.settings,
-                size: sideMenuIconSize,
-              ),
-              title: Text(
-                'Settings'.tr,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
-            ),
-          ),
-        ),
-        Container(
+        SizedBox(
           // height: double.infinity,
-          height: screenHeight(context) - 280,
+          height: screenHeight(context) - 238,
           child: Align(
             alignment: Alignment.bottomLeft,
             child: ListTile(
+              horizontalTitleGap: -10.0,
+              // hoverColor: Theme.of(context).colorScheme.primary,
               onTap: () {},
-              horizontalTitleGap: 0.0,
               leading: const Icon(
                 Icons.settings,
                 size: sideMenuIconSize,
               ),
-              title: Text(
-                'Settings'.tr,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-              ),
+              title: (screenWidth(context) > sideMenuScreenIconWidth)
+                  ? Text(
+                      'Settings'.tr,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                    )
+                  : null,
             ),
           ),
         ),
