@@ -24,56 +24,186 @@ class HomePage extends StatelessWidget {
       appBar: AppBarWidget(
         title: 'Home'.tr,
       ),
-      body: Column(
+      body: Row(
         children: <Widget>[
-          (screenWidth(context) == 0.0)
-              ? Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: PageView(
-                          children: const <Widget>[
-                            MainContent(1),
-                            MainContent(2),
-                            MainContent(3),
-                          ],
+          SizedBox(
+            width: screenWidth(context),
+            child: Ink(
+              color: const Color.fromARGB(31, 183, 183, 183),
+              child: const SideMenu(),
+            ),
+          ),
+          const Expanded(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                )
-              : Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      SizedBox(
-                        width: screenWidth(context),
-                        child: const SideMenu(),
-                      ),
-                      Expanded(
-                        child: PageView(
-                          children: const <Widget>[
-                            MainContent(1),
-                            MainContent(2),
-                            MainContent(3),
-                          ],
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.all(30),
+                                child: Text('test'),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                )
-        ],
+                ),
+              ],
+            ),
+          ),
 
-        // child: Column(
-        //   children: [
-        //     const SizedBox(height: 20),
-        //     CustomButton(
-        //       platform: 'Ottawa STEM Club',
-        //       onPressed: () {
-        //         // Button on pressed action
-        //       },
-        //     ),
-        //   ],
-        // ),
+          // mobileDevice(context)
+          //     ? Expanded(
+          //         child: Row(
+          //           children: <Widget>[
+          //             SingleChildScrollView(
+          //               child: PageView(
+          //                 children: const <Widget>[
+          //                   MainContent(1),
+          //                 ],
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       )
+          //     : Expanded(
+          //         child: Row(
+          //           children: <Widget>[
+          //             SizedBox(
+          //               width: screenWidth(context),
+          //               child: const SideMenu(),
+          //             ),
+          //             SingleChildScrollView(
+          //               child: PageView(
+          //                 children: const <Widget>[
+          //                   MainContent(1),
+          //                 ],
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       )
+        ],
       ),
     );
   }
@@ -90,9 +220,49 @@ class MainContent extends StatelessWidget {
       color: Colors.black26,
       child: const Column(
         children: <Widget>[
-          SizedBox(height: 20),
+          SizedBox(height: 40),
           Text('Content A'),
-          SizedBox(height: 20),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
+          Text('Content A'),
+          SizedBox(height: 40),
           Text('Content A'),
         ],
       ),
@@ -217,4 +387,14 @@ double screenHeight(BuildContext context) {
   double screenHeight = screenSize.height;
   // logger.i(screenHeight);
   return screenHeight;
+}
+
+bool mobileDevice(BuildContext context) {
+  var screenSize = MediaQuery.of(context).size;
+  logger.i(screenSize.width);
+  if (screenSize.width > 550) {
+    return false;
+  } else {
+    return true;
+  }
 }
