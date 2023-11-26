@@ -27,7 +27,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final Future _getGroups = GroupsController().getGroups();
+  final Future _getGroupsA = GroupsController().getGroups();
+  final Future _getGroupsB = GroupsController().getGroups();
 
   // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   // final SideDrawerController controller = Get.put(SideDrawerController());
@@ -44,7 +45,34 @@ class _HomePageState extends State<HomePage> {
                 const SideMenu(),
                 Expanded(
                   child: FutureBuilder(
-                    future: _getGroups,
+                    future: _getGroupsA,
+                    builder: (BuildContext context, AsyncSnapshot snapshot) {
+                      if (snapshot.hasError) {
+                        return Center(child: Text('Some error occurred ${snapshot.error}'));
+                      } else if (snapshot.hasData) {
+                        final groups = snapshot.data;
+                        return ListView.builder(
+                          itemCount: groups.length,
+                          itemBuilder: (context, index) {
+                            Map group = groups[index];
+                            return ListTile(
+                              title: Text('${group['name']}'),
+                              subtitle: Text('${group['age']}'),
+                              // onTap: () {
+                              //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDetails(thisItem['id'].toString())));
+                              // },
+                            );
+                          },
+                        );
+                      } else {
+                        return const Center(child: CircularProgressIndicator());
+                      }
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: FutureBuilder(
+                    future: _getGroupsB,
                     builder: (BuildContext context, AsyncSnapshot snapshot) {
                       if (snapshot.hasError) {
                         return Center(child: Text('Some error occurred ${snapshot.error}'));
