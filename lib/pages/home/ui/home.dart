@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:provider/provider.dart';
 
@@ -13,6 +14,8 @@ import 'package:logger/logger.dart';
 
 var logger = Logger();
 
+final systemParameters = GetStorage();
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -24,187 +27,298 @@ class HomePage extends StatelessWidget {
       appBar: AppBarWidget(
         title: 'Home'.tr,
       ),
-      body: Row(
-        children: <Widget>[
-          SizedBox(
-            width: screenWidth(context),
-            child: Ink(
-              color: const Color.fromARGB(31, 183, 183, 183),
-              child: const SideMenu(),
-            ),
-          ),
-          const Expanded(
-            child: Row(
+      body: isMobileDevice(context)
+          ? Row(
               children: <Widget>[
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(30),
-                                child: Text('test'),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                SizedBox(
+                  width: systemParameters.read('iconSideMenu') ? sideMenuScreenIconWidth : sideMenuScreenFullWidth,
+                  child: Ink(
+                    color: const Color.fromARGB(31, 183, 183, 183),
+                    child: const SideMenu(),
                   ),
                 ),
+                const Expanded(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            )
+          : const Row(
+              children: <Widget>[
+                Expanded(
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(30),
+                                      child: Text('test'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
-          ),
-
-          // mobileDevice(context)
-          //     ? Expanded(
-          //         child: Row(
-          //           children: <Widget>[
-          //             SingleChildScrollView(
-          //               child: PageView(
-          //                 children: const <Widget>[
-          //                   MainContent(1),
-          //                 ],
-          //               ),
-          //             ),
-          //           ],
-          //         ),
-          //       )
-          //     : Expanded(
-          //         child: Row(
-          //           children: <Widget>[
-          //             SizedBox(
-          //               width: screenWidth(context),
-          //               child: const SideMenu(),
-          //             ),
-          //             SingleChildScrollView(
-          //               child: PageView(
-          //                 children: const <Widget>[
-          //                   MainContent(1),
-          //                 ],
-          //               ),
-          //             ),
-          //           ],
-          //         ),
-          //       )
-        ],
-      ),
     );
   }
 }
@@ -270,16 +384,25 @@ class MainContent extends StatelessWidget {
   }
 }
 
-class SideMenu extends StatelessWidget {
+class SideMenu extends StatefulWidget {
   const SideMenu({super.key});
+
+  @override
+  State<SideMenu> createState() => _SideMenuState();
+}
+
+class _SideMenuState extends State<SideMenu> {
+  bool _sideMenuIcon = false;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
         ListTile(
+          dense: true,
+          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
           onTap: () {},
-          horizontalTitleGap: -10.0,
+          horizontalTitleGap: sideMenuHorizontalTitleGap,
           leading: const Icon(
             Icons.settings,
             size: sideMenuIconSize,
@@ -294,8 +417,10 @@ class SideMenu extends StatelessWidget {
               : null,
         ),
         ListTile(
+          dense: true,
+          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
           onTap: () {},
-          horizontalTitleGap: -10.0,
+          horizontalTitleGap: sideMenuHorizontalTitleGap,
           leading: const Icon(
             Icons.settings,
             size: sideMenuIconSize,
@@ -310,8 +435,10 @@ class SideMenu extends StatelessWidget {
               : null,
         ),
         ListTile(
+          dense: true,
+          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
           onTap: () {},
-          horizontalTitleGap: -10.0,
+          horizontalTitleGap: sideMenuHorizontalTitleGap,
           leading: const Icon(
             Icons.settings,
             size: sideMenuIconSize,
@@ -326,8 +453,10 @@ class SideMenu extends StatelessWidget {
               : null,
         ),
         ListTile(
+          dense: true,
+          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
           onTap: () {},
-          horizontalTitleGap: -10.0,
+          horizontalTitleGap: sideMenuHorizontalTitleGap,
           leading: const Icon(
             Icons.settings,
             size: sideMenuIconSize,
@@ -342,40 +471,210 @@ class SideMenu extends StatelessWidget {
               : null,
         ),
         SizedBox(
-          // height: double.infinity,
-          height: screenHeight(context) - 238,
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: ListTile(
-              horizontalTitleGap: -10.0,
-              // hoverColor: Theme.of(context).colorScheme.primary,
-              onTap: () {},
-              leading: const Icon(
-                Icons.settings,
-                size: sideMenuIconSize,
-              ),
-              title: (screenWidth(context) > sideMenuScreenIconWidth)
-                  ? Text(
-                      'Settings'.tr,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                    )
-                  : null,
-            ),
-          ),
+          height: screenHeight(context) - sideMenuBottomSpace,
         ),
+        ListTile(
+          dense: true,
+          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+          horizontalTitleGap: sideMenuHorizontalTitleGap,
+          // hoverColor: Theme.of(context).colorScheme.primary,
+          onTap: () {},
+          leading: const Icon(
+            Icons.settings,
+            size: sideMenuIconSize,
+          ),
+          title: (screenWidth(context) > sideMenuScreenIconWidth)
+              ? Text(
+                  'Settings'.tr,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                )
+              : null,
+        ),
+        if (!_sideMenuIcon)
+          ListTile(
+            dense: true,
+            visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+            horizontalTitleGap: sideMenuHorizontalTitleGap,
+            leading: Icon(
+              Icons.keyboard_double_arrow_left,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: (screenWidth(context) > sideMenuScreenIconWidth)
+                ? Text(
+                    'Collapse'.tr,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                  )
+                : null,
+            onTap: () {
+              setState(() {
+                _sideMenuIcon = true;
+              });
+            },
+          ),
+        if (_sideMenuIcon)
+          ListTile(
+            dense: true,
+            visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+            horizontalTitleGap: sideMenuHorizontalTitleGap,
+            leading: Icon(
+              Icons.keyboard_double_arrow_right,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            onTap: () {
+              setState(() {
+                _sideMenuIcon = false;
+              });
+            },
+          )
       ],
     );
   }
 }
 
+// class SideMenu extends StatelessWidget {
+//   const SideMenu({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView(
+//       children: <Widget>[
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           onTap: () {},
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           leading: const Icon(
+//             Icons.settings,
+//             size: sideMenuIconSize,
+//           ),
+//           title: (screenWidth(context) > sideMenuScreenIconWidth)
+//               ? Text(
+//                   'Settings'.tr,
+//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+//                         color: Theme.of(context).colorScheme.primary,
+//                       ),
+//                 )
+//               : null,
+//         ),
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           onTap: () {},
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           leading: const Icon(
+//             Icons.settings,
+//             size: sideMenuIconSize,
+//           ),
+//           title: (screenWidth(context) > sideMenuScreenIconWidth)
+//               ? Text(
+//                   'Settings'.tr,
+//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+//                         color: Theme.of(context).colorScheme.primary,
+//                       ),
+//                 )
+//               : null,
+//         ),
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           onTap: () {},
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           leading: const Icon(
+//             Icons.settings,
+//             size: sideMenuIconSize,
+//           ),
+//           title: (screenWidth(context) > sideMenuScreenIconWidth)
+//               ? Text(
+//                   'Settings'.tr,
+//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+//                         color: Theme.of(context).colorScheme.primary,
+//                       ),
+//                 )
+//               : null,
+//         ),
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           onTap: () {},
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           leading: const Icon(
+//             Icons.settings,
+//             size: sideMenuIconSize,
+//           ),
+//           title: (screenWidth(context) > sideMenuScreenIconWidth)
+//               ? Text(
+//                   'Settings'.tr,
+//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+//                         color: Theme.of(context).colorScheme.primary,
+//                       ),
+//                 )
+//               : null,
+//         ),
+//         SizedBox(
+//           height: screenHeight(context) - sideMenuBottomSpace,
+//         ),
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           // hoverColor: Theme.of(context).colorScheme.primary,
+//           onTap: () {},
+//           leading: const Icon(
+//             Icons.settings,
+//             size: sideMenuIconSize,
+//           ),
+//           title: (screenWidth(context) > sideMenuScreenIconWidth)
+//               ? Text(
+//                   'Settings'.tr,
+//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+//                         color: Theme.of(context).colorScheme.primary,
+//                       ),
+//                 )
+//               : null,
+//         ),
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           leading: Icon(
+//             Icons.keyboard_double_arrow_left,
+//             color: Theme.of(context).colorScheme.primary,
+//           ),
+//           title: (screenWidth(context) > sideMenuScreenIconWidth)
+//               ? Text(
+//                   'Collapse'.tr,
+//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+//                         color: Theme.of(context).colorScheme.primary,
+//                       ),
+//                 )
+//               : null,
+//           onTap: () {},
+//         ),
+//         ListTile(
+//           dense: true,
+//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+//           horizontalTitleGap: sideMenuHorizontalTitleGap,
+//           leading: Icon(
+//             Icons.keyboard_double_arrow_right,
+//             color: Theme.of(context).colorScheme.primary,
+//           ),
+//           onTap: () {},
+//         ),
+//       ],
+//     );
+//   }
+// }
+
 double screenWidth(BuildContext context) {
   var screenSize = MediaQuery.of(context).size;
   double screenWidth = screenSize.width;
-  if (screenWidth >= screenMedium && screenWidth <= screenLarge) {
+  if (screenWidth >= screenMobile && screenWidth <= screenLarge) {
     return sideMenuScreenIconWidth;
-  } else if (screenWidth < screenMedium) {
+  } else if (screenWidth < screenMobile) {
     return sideMenuScreenZeroWidth;
   } else {
     return sideMenuScreenFullWidth;
@@ -389,12 +688,18 @@ double screenHeight(BuildContext context) {
   return screenHeight;
 }
 
-bool mobileDevice(BuildContext context) {
-  var screenSize = MediaQuery.of(context).size;
-  logger.i(screenSize.width);
-  if (screenSize.width > 550) {
-    return false;
-  } else {
-    return true;
-  }
-}
+// bool mobileDevice(BuildContext context) {
+//   // var screenSize = MediaQuery.of(context).size;
+//   // double screenWidth = screenSize.width;
+//   logger.i(MediaQuery.of(context).size.width);
+//   if (MediaQuery.of(context).size.width <= screenMobile) {
+//     // logger.i(screenSize.width);
+//     logger.i('true');
+//     return true;
+//   } else {
+//     logger.i('false');
+//     return false;
+//   }
+// }
+
+bool isMobileDevice(BuildContext context) => MediaQuery.of(context).size.width >= screenMobile;

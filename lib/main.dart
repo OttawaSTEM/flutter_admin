@@ -26,6 +26,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final systemParameters = GetStorage();
+    systemParameters.write('iconSideMenu', false);
+
     return GetMaterialApp(
       theme: ThemeData(
         useMaterial3: false,
