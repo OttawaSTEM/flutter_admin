@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 // import '../../../widgets/custom_button.dart';
 import '../../../widgets/app_bar.dart';
 import '../../../widgets/home/side_menu.dart';
-import '../../../widgets/main_panel.dart';
 import '../../../widgets/home/sub_panel_1.dart';
 import '../../../widgets/home/sub_panel_2.dart';
 
@@ -47,7 +46,8 @@ class _HomePageState extends State<HomePage> {
             )
           : const Row(
               children: <Widget>[
-                MainPanel(),
+                SubPanel1(),
+                SubPanel2(),
               ],
             ),
     );
