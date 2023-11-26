@@ -28,16 +28,10 @@ class HomePage extends StatelessWidget {
         title: 'Home'.tr,
       ),
       body: isMobileDevice(context)
-          ? Row(
+          ? const Row(
               children: <Widget>[
-                SizedBox(
-                  width: systemParameters.read('iconSideMenu') ? sideMenuScreenIconWidth : sideMenuScreenFullWidth,
-                  child: Ink(
-                    color: const Color.fromARGB(31, 183, 183, 183),
-                    child: const SideMenu(),
-                  ),
-                ),
-                const Expanded(
+                SideMenu(),
+                Expanded(
                   child: Row(
                     children: <Widget>[
                       Expanded(
@@ -396,278 +390,96 @@ class _SideMenuState extends State<SideMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        ListTile(
-          dense: true,
-          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-          onTap: () {},
-          horizontalTitleGap: sideMenuHorizontalTitleGap,
-          leading: const Icon(
-            Icons.settings,
-            size: sideMenuIconSize,
-          ),
-          title: (screenWidth(context) > sideMenuScreenIconWidth)
-              ? Text(
-                  'Settings'.tr,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                )
-              : null,
-        ),
-        ListTile(
-          dense: true,
-          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-          onTap: () {},
-          horizontalTitleGap: sideMenuHorizontalTitleGap,
-          leading: const Icon(
-            Icons.settings,
-            size: sideMenuIconSize,
-          ),
-          title: (screenWidth(context) > sideMenuScreenIconWidth)
-              ? Text(
-                  'Settings'.tr,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                )
-              : null,
-        ),
-        ListTile(
-          dense: true,
-          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-          onTap: () {},
-          horizontalTitleGap: sideMenuHorizontalTitleGap,
-          leading: const Icon(
-            Icons.settings,
-            size: sideMenuIconSize,
-          ),
-          title: (screenWidth(context) > sideMenuScreenIconWidth)
-              ? Text(
-                  'Settings'.tr,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                )
-              : null,
-        ),
-        ListTile(
-          dense: true,
-          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-          onTap: () {},
-          horizontalTitleGap: sideMenuHorizontalTitleGap,
-          leading: const Icon(
-            Icons.settings,
-            size: sideMenuIconSize,
-          ),
-          title: (screenWidth(context) > sideMenuScreenIconWidth)
-              ? Text(
-                  'Settings'.tr,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                )
-              : null,
-        ),
-        SizedBox(
-          height: screenHeight(context) - sideMenuBottomSpace,
-        ),
-        ListTile(
-          dense: true,
-          visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-          horizontalTitleGap: sideMenuHorizontalTitleGap,
-          // hoverColor: Theme.of(context).colorScheme.primary,
-          onTap: () {},
-          leading: const Icon(
-            Icons.settings,
-            size: sideMenuIconSize,
-          ),
-          title: (screenWidth(context) > sideMenuScreenIconWidth)
-              ? Text(
-                  'Settings'.tr,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                )
-              : null,
-        ),
-        if (!_sideMenuIcon)
-          ListTile(
-            dense: true,
-            visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-            horizontalTitleGap: sideMenuHorizontalTitleGap,
-            leading: Icon(
-              Icons.keyboard_double_arrow_left,
-              color: Theme.of(context).colorScheme.primary,
+    return SizedBox(
+      width: _sideMenuIcon ? sideMenuScreenIconWidth : sideMenuScreenFullWidth,
+      child: Ink(
+        color: const Color.fromARGB(31, 183, 183, 183),
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              dense: true,
+              visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+              onTap: () {},
+              horizontalTitleGap: sideMenuHorizontalTitleGap,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: (!_sideMenuIcon)
+                  ? Text(
+                      'Settings'.tr,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                    )
+                  : null,
             ),
-            title: (screenWidth(context) > sideMenuScreenIconWidth)
-                ? Text(
-                    'Collapse'.tr,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
-                  )
-                : null,
-            onTap: () {
-              setState(() {
-                _sideMenuIcon = true;
-              });
-            },
-          ),
-        if (_sideMenuIcon)
-          ListTile(
-            dense: true,
-            visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-            horizontalTitleGap: sideMenuHorizontalTitleGap,
-            leading: Icon(
-              Icons.keyboard_double_arrow_right,
-              color: Theme.of(context).colorScheme.primary,
+            SizedBox(
+              height: screenHeight(context) - sideMenuBottomSpace,
             ),
-            onTap: () {
-              setState(() {
-                _sideMenuIcon = false;
-              });
-            },
-          )
-      ],
+            ListTile(
+              dense: true,
+              visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+              horizontalTitleGap: sideMenuHorizontalTitleGap,
+              // hoverColor: Theme.of(context).colorScheme.primary,
+              onTap: () {},
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: (!_sideMenuIcon)
+                  ? Text(
+                      'Settings'.tr,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                    )
+                  : null,
+            ),
+            if (!_sideMenuIcon)
+              ListTile(
+                dense: true,
+                visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+                horizontalTitleGap: sideMenuHorizontalTitleGap,
+                leading: Icon(
+                  Icons.keyboard_double_arrow_left,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                title: (screenWidth(context) > sideMenuScreenIconWidth)
+                    ? Text(
+                        'Collapse'.tr,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                      )
+                    : null,
+                onTap: () {
+                  setState(() {
+                    _sideMenuIcon = true;
+                  });
+                },
+              ),
+            if (_sideMenuIcon)
+              ListTile(
+                dense: true,
+                visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+                horizontalTitleGap: sideMenuHorizontalTitleGap,
+                leading: Icon(
+                  Icons.keyboard_double_arrow_right,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                onTap: () {
+                  setState(() {
+                    _sideMenuIcon = false;
+                  });
+                },
+              )
+          ],
+        ),
+      ),
     );
   }
 }
-
-// class SideMenu extends StatelessWidget {
-//   const SideMenu({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListView(
-//       children: <Widget>[
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           onTap: () {},
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           leading: const Icon(
-//             Icons.settings,
-//             size: sideMenuIconSize,
-//           ),
-//           title: (screenWidth(context) > sideMenuScreenIconWidth)
-//               ? Text(
-//                   'Settings'.tr,
-//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-//                         color: Theme.of(context).colorScheme.primary,
-//                       ),
-//                 )
-//               : null,
-//         ),
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           onTap: () {},
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           leading: const Icon(
-//             Icons.settings,
-//             size: sideMenuIconSize,
-//           ),
-//           title: (screenWidth(context) > sideMenuScreenIconWidth)
-//               ? Text(
-//                   'Settings'.tr,
-//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-//                         color: Theme.of(context).colorScheme.primary,
-//                       ),
-//                 )
-//               : null,
-//         ),
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           onTap: () {},
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           leading: const Icon(
-//             Icons.settings,
-//             size: sideMenuIconSize,
-//           ),
-//           title: (screenWidth(context) > sideMenuScreenIconWidth)
-//               ? Text(
-//                   'Settings'.tr,
-//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-//                         color: Theme.of(context).colorScheme.primary,
-//                       ),
-//                 )
-//               : null,
-//         ),
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           onTap: () {},
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           leading: const Icon(
-//             Icons.settings,
-//             size: sideMenuIconSize,
-//           ),
-//           title: (screenWidth(context) > sideMenuScreenIconWidth)
-//               ? Text(
-//                   'Settings'.tr,
-//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-//                         color: Theme.of(context).colorScheme.primary,
-//                       ),
-//                 )
-//               : null,
-//         ),
-//         SizedBox(
-//           height: screenHeight(context) - sideMenuBottomSpace,
-//         ),
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           // hoverColor: Theme.of(context).colorScheme.primary,
-//           onTap: () {},
-//           leading: const Icon(
-//             Icons.settings,
-//             size: sideMenuIconSize,
-//           ),
-//           title: (screenWidth(context) > sideMenuScreenIconWidth)
-//               ? Text(
-//                   'Settings'.tr,
-//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-//                         color: Theme.of(context).colorScheme.primary,
-//                       ),
-//                 )
-//               : null,
-//         ),
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           leading: Icon(
-//             Icons.keyboard_double_arrow_left,
-//             color: Theme.of(context).colorScheme.primary,
-//           ),
-//           title: (screenWidth(context) > sideMenuScreenIconWidth)
-//               ? Text(
-//                   'Collapse'.tr,
-//                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-//                         color: Theme.of(context).colorScheme.primary,
-//                       ),
-//                 )
-//               : null,
-//           onTap: () {},
-//         ),
-//         ListTile(
-//           dense: true,
-//           visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-//           horizontalTitleGap: sideMenuHorizontalTitleGap,
-//           leading: Icon(
-//             Icons.keyboard_double_arrow_right,
-//             color: Theme.of(context).colorScheme.primary,
-//           ),
-//           onTap: () {},
-//         ),
-//       ],
-//     );
-//   }
-// }
 
 double screenWidth(BuildContext context) {
   var screenSize = MediaQuery.of(context).size;
