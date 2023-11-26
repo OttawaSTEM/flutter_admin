@@ -445,7 +445,7 @@ class _SideMenuState extends State<SideMenu> {
                   Icons.keyboard_double_arrow_left,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                title: (screenWidth(context) > sideMenuScreenIconWidth)
+                title: (!_sideMenuIcon)
                     ? Text(
                         'Collapse'.tr,
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -481,37 +481,10 @@ class _SideMenuState extends State<SideMenu> {
   }
 }
 
-double screenWidth(BuildContext context) {
-  var screenSize = MediaQuery.of(context).size;
-  double screenWidth = screenSize.width;
-  if (screenWidth >= screenMobile && screenWidth <= screenLarge) {
-    return sideMenuScreenIconWidth;
-  } else if (screenWidth < screenMobile) {
-    return sideMenuScreenZeroWidth;
-  } else {
-    return sideMenuScreenFullWidth;
-  }
-}
+bool isMobileDevice(BuildContext context) => MediaQuery.of(context).size.width >= screenMobile;
 
 double screenHeight(BuildContext context) {
   var screenSize = MediaQuery.of(context).size;
   double screenHeight = screenSize.height;
-  // logger.i(screenHeight);
   return screenHeight;
 }
-
-// bool mobileDevice(BuildContext context) {
-//   // var screenSize = MediaQuery.of(context).size;
-//   // double screenWidth = screenSize.width;
-//   logger.i(MediaQuery.of(context).size.width);
-//   if (MediaQuery.of(context).size.width <= screenMobile) {
-//     // logger.i(screenSize.width);
-//     logger.i('true');
-//     return true;
-//   } else {
-//     logger.i('false');
-//     return false;
-//   }
-// }
-
-bool isMobileDevice(BuildContext context) => MediaQuery.of(context).size.width >= screenMobile;
