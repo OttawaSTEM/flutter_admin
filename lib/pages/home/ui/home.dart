@@ -9,9 +9,10 @@ import 'package:get/get.dart';
 // import '../../drawer/ui/drawer_ui.dart';
 // import '../../../widgets/custom_button.dart';
 import '../../../widgets/app_bar.dart';
-import '../../../widgets/side_menu.dart';
+import '../../../widgets/home/side_menu.dart';
 import '../../../widgets/main_panel.dart';
-import '../../groups/controller/groups_controller.dart';
+import '../../../widgets/home/sub_panel_1.dart';
+import '../../../widgets/home/sub_panel_2.dart';
 
 import 'package:logger/logger.dart';
 
@@ -27,9 +28,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final Future _getGroupsA = GroupsController().getGroups();
-  final Future _getGroupsB = GroupsController().getGroups();
-
   // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   // final SideDrawerController controller = Get.put(SideDrawerController());
 
@@ -40,63 +38,11 @@ class _HomePageState extends State<HomePage> {
         title: 'Home'.tr,
       ),
       body: isMobileDevice(context)
-          ? Row(
+          ? const Row(
               children: <Widget>[
-                const SideMenu(),
-                Expanded(
-                  child: FutureBuilder(
-                    future: _getGroupsA,
-                    builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(child: Text('Some error occurred ${snapshot.error}'));
-                      } else if (snapshot.hasData) {
-                        final groups = snapshot.data;
-                        return ListView.builder(
-                          itemCount: groups.length,
-                          itemBuilder: (context, index) {
-                            Map group = groups[index];
-                            return ListTile(
-                              title: Text('${group['name']}'),
-                              subtitle: Text('${group['age']}'),
-                              // onTap: () {
-                              //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDetails(thisItem['id'].toString())));
-                              // },
-                            );
-                          },
-                        );
-                      } else {
-                        return const Center(child: CircularProgressIndicator());
-                      }
-                    },
-                  ),
-                ),
-                Expanded(
-                  child: FutureBuilder(
-                    future: _getGroupsB,
-                    builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      if (snapshot.hasError) {
-                        return Center(child: Text('Some error occurred ${snapshot.error}'));
-                      } else if (snapshot.hasData) {
-                        final groups = snapshot.data;
-                        return ListView.builder(
-                          itemCount: groups.length,
-                          itemBuilder: (context, index) {
-                            Map group = groups[index];
-                            return ListTile(
-                              title: Text('${group['name']}'),
-                              subtitle: Text('${group['age']}'),
-                              // onTap: () {
-                              //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDetails(thisItem['id'].toString())));
-                              // },
-                            );
-                          },
-                        );
-                      } else {
-                        return const Center(child: CircularProgressIndicator());
-                      }
-                    },
-                  ),
-                ),
+                SideMenu(),
+                SubPanel1(),
+                SubPanel2(),
               ],
             )
           : const Row(
