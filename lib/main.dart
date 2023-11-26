@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+// import 'package:get_storage/get_storage.dart';
 
 import 'lang/languages.dart';
 import 'routes/app_routes.dart';
@@ -16,7 +16,7 @@ Future main() async {
   // ByteData data = await PlatformAssetBundle().load('assets/ca/lets-encrypt-r3.pem');
   // SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
 
-  await GetStorage.init();
+  // await GetStorage.init();
   await dotenv.load(fileName: 'assets/local.env');
   runApp(const App());
 }
@@ -26,8 +26,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final systemParameters = GetStorage();
-    systemParameters.write('iconSideMenu', false);
+    // final systemParameters = GetStorage();
+    // systemParameters.write('iconSideMenu', false);
 
     return GetMaterialApp(
       theme: ThemeData(
