@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
-class MainPanel extends StatelessWidget {
+class MainPanel extends StatefulWidget {
   const MainPanel({super.key});
+
+  @override
+  State<MainPanel> createState() => _MainPanelState();
+}
+
+class _MainPanelState extends State<MainPanel> {
+  // bool _sideMenuIcon = false;
 
   @override
   Widget build(BuildContext context) {

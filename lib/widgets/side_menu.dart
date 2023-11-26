@@ -100,7 +100,7 @@ class _SideMenuState extends State<SideMenu> {
                     _sideMenuIcon = false;
                   });
                 },
-              )
+              ),
           ],
         ),
       ),
