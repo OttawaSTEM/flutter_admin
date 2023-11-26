@@ -26,7 +26,9 @@ class _SideMenuState extends State<SideMenu> {
             ListTile(
               dense: true,
               visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
-              onTap: () {},
+              onTap: () {
+                Get.toNamed("/groups");
+              },
               horizontalTitleGap: sideMenuHorizontalTitleGap,
               leading: const Icon(
                 Icons.settings,
@@ -40,6 +42,26 @@ class _SideMenuState extends State<SideMenu> {
                           ),
                     )
                   : null,
+            ),
+            ListTile(
+              dense: true,
+              visualDensity: const VisualDensity(vertical: sideMenuVisualDensity),
+              horizontalTitleGap: sideMenuHorizontalTitleGap,
+              leading: const Icon(
+                Icons.settings,
+                size: sideMenuIconSize,
+              ),
+              title: (!_sideMenuIcon)
+                  ? Text(
+                      'Users'.tr,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                    )
+                  : null,
+              onTap: () {
+                Get.toNamed("/users");
+              },
             ),
             SizedBox(
               height: screenHeight(context) - sideMenuBottomSpace,
