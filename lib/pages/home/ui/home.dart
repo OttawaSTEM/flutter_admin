@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 // import '../../drawer/controller/drawer_controller.dart';
 // import '../../drawer/ui/drawer_ui.dart';
 // import '../../../widgets/custom_button.dart';
-import '../../../widgets/app_bar.dart';
+import '../../../widgets/global/app_bar.dart';
 import '../../../widgets/home/side_menu.dart';
 import '../../../widgets/home/sub_panel_1.dart';
 import '../../../widgets/home/sub_panel_2.dart';
