@@ -9,9 +9,10 @@ import 'package:get/get.dart';
 // import '../../drawer/ui/drawer_ui.dart';
 // import '../../../widgets/custom_button.dart';
 import '../../../widgets/global/app_bar.dart';
-import '../../../widgets/home/side_menu.dart';
-import '../../../widgets/home/sub_panel_1.dart';
-import '../../../widgets/home/sub_panel_2.dart';
+import '../../../widgets/global/screen_one.dart';
+// import '../../../widgets/home/side_menu.dart';
+// import '../../../widgets/home/sub_panel_1.dart';
+// import '../../../widgets/home/sub_panel_2.dart';
 
 import 'package:logger/logger.dart';
 
@@ -29,27 +30,29 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   // final SideDrawerController controller = Get.put(SideDrawerController());
+  // final int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(
-        title: 'Home'.tr,
-      ),
-      body: isMobileDevice(context)
-          ? const Row(
-              children: <Widget>[
-                SideMenu(),
-                SubPanel1(),
-                SubPanel2(),
-              ],
-            )
-          : const Row(
-              children: <Widget>[
-                SubPanel1(),
-                SubPanel2(),
-              ],
-            ),
-    );
+        appBar: AppBarWidget(
+          title: 'Home'.tr,
+        ),
+        body: const ScreenOne()
+        // body: isMobileDevice(context)
+        //     ? const Row(
+        //         children: <Widget>[
+        //           SideMenu(),
+        //           SubPanel1(),
+        //           SubPanel2(),
+        //         ],
+        //       )
+        //     : const Row(
+        //         children: <Widget>[
+        //           SubPanel1(),
+        //           SubPanel2(),
+        //         ],
+        //       ),
+        );
   }
 }
