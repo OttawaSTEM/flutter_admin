@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
-import '../../pages/groups/controller/groups_controller.dart';
+import '../../../pages/groups/controller/groups_controller.dart';
 
-class SubPanel2 extends StatefulWidget {
-  const SubPanel2({super.key});
+class SubPanel1 extends StatefulWidget {
+  const SubPanel1({super.key});
 
   @override
-  State<SubPanel2> createState() => _SubPanel2State();
+  State<SubPanel1> createState() => _SubPanel1State();
 }
 
-class _SubPanel2State extends State<SubPanel2> {
+class _SubPanel1State extends State<SubPanel1> {
   final Future _getGroups = GroupsController().getGroups();
 
   @override
