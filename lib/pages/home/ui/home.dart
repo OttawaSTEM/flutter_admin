@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_admin/widgets/global/screen_one.dart';
 // import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,9 @@ import '../controller/home_controller.dart';
 // import '../../drawer/ui/drawer_ui.dart';
 // import '../../../widgets/custom_button.dart';
 import '../../../widgets/global/app_bar.dart';
-import '../../../widgets/global/screen_one.dart';
+// import '../../../widgets/global/screen_one.dart';
+import '../../../widgets/home/side_menu.dart';
+import '../../../widgets/home/main_content.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -23,7 +26,12 @@ class HomePage extends GetView<HomeController> {
       appBar: AppBarWidget(
         title: 'Home'.tr,
       ),
-      body: const ScreenOne(),
+      body: const Row(
+        children: <Widget>[
+          SideMenu(),
+          MainContect(),
+        ],
+      ),
     );
   }
 }
