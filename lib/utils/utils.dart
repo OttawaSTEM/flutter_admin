@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
+double screenWidth(BuildContext context) {
+  var screenSize = MediaQuery.of(context).size;
+  return screenSize.width;
+}
+
+double screenHeight(BuildContext context) {
+  var screenSize = MediaQuery.of(context).size;
+  return screenSize.height;
+}
+
 /// Helper class for device related operations.
 class DeviceUtils {
   /// hides the keyboard if its already open

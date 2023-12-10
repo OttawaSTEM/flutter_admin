@@ -56,7 +56,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             fit: BoxFit.scaleDown, // This helps in shrinking the ClipRRect to the size of the Image
             child: SvgPicture.asset(
               'assets/images/profile/profile_default.svg',
-              height: preferredSize.height * 0.55,
+              height: preferredSize.height * 0.6,
             ),
             // child: ClipRRect(
             //   borderRadius: BorderRadius.circular(15),

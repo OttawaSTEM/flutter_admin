@@ -14,8 +14,12 @@ import '../controller/home_controller.dart';
 // import '../../../widgets/custom_button.dart';
 import '../../../widgets/global/app_bar.dart';
 // import '../../../widgets/global/screen_one.dart';
-import '../../../widgets/home/side_menu.dart';
+// import '../../../widgets/home/side_menu.dart';
 import '../../../widgets/home/main_content.dart';
+
+import '../../../widgets/home/side_menu.dart';
+import '../../../widgets/home/old/sub_panel_1.dart';
+import '../../../widgets/home/old/sub_panel_2.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -29,9 +33,19 @@ class HomePage extends GetView<HomeController> {
       body: const Row(
         children: <Widget>[
           SideMenu(),
+          VerticalDivider(thickness: 1, width: 1),
           MainContect(),
+          // SubPanel1(),
+          // SubPanel2(),
         ],
       ),
+      // body: const Row(
+      //   children: <Widget>[
+      //     SideMenu(),
+      //     VerticalDivider(thickness: 1, width: 1),
+      //     MainContect(),
+      //   ],
+      // ),
     );
   }
 }
