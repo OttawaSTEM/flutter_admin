@@ -25,12 +25,21 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            icon: SvgPicture.asset('assets/images/core/logo.svg'),
-            // icon: Image.asset('assets/images/logo.png'),
-            iconSize: 50,
-            onPressed: () {},
+          const SizedBox(
+            width: 10,
           ),
+          CircleAvatar(
+            radius: preferredSize.height * 0.3,
+            backgroundColor: Colors.white,
+            // backgroundImage: NetworkImage('imageUrl'),
+            child: SvgPicture.asset('assets/images/core/logo.svg'),
+          ),
+          // IconButton(
+          //   icon: SvgPicture.asset('assets/images/core/logo.svg'),
+          //   // icon: Image.asset('assets/images/logo.png'),
+          //   iconSize: 50,
+          //   onPressed: () {},
+          // ),
           Expanded(
             child: Center(
               child: Text(
@@ -45,20 +54,24 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           ),
           FittedBox(
             fit: BoxFit.scaleDown, // This helps in shrinking the ClipRRect to the size of the Image
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.asset(
-                'assets/images/profile/profile_pic.png',
-                width: 30,
-                height: 30,
-              ),
+            child: SvgPicture.asset(
+              'assets/images/profile/profile_default.svg',
+              height: preferredSize.height * 0.55,
             ),
+            // child: ClipRRect(
+            //   borderRadius: BorderRadius.circular(15),
+            //   child: Image.asset(
+            //     'assets/images/profile/profile_default.png',
+            //     width: preferredSize.height * 0.55,
+            //     height: preferredSize.height * 0.55,
+            //   ),
+            // ),
           ),
           // CircleAvatar(
           //   radius: 48,
           //   // backgroundImage: NetworkImage('imageUrl'),
           //   backgroundImage: Image.asset(
-          //     'assets/images/profile/profile_pic.png',
+          //     'assets/images/profile/profile_default.png',
           //   ),
           // ),
           // Image.asset(
