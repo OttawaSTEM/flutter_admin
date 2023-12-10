@@ -18,8 +18,8 @@ import '../../../widgets/global/app_bar.dart';
 import '../../../widgets/home/main_content.dart';
 
 import '../../../widgets/home/side_menu.dart';
-import '../../../widgets/home/old/sub_panel_1.dart';
-import '../../../widgets/home/old/sub_panel_2.dart';
+// import '../../../widgets/home/old/sub_panel_1.dart';
+// import '../../../widgets/home/old/sub_panel_2.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
