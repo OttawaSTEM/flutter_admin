@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MainContect extends StatefulWidget {
+class MainContent extends StatefulWidget {
   // final int _selectedIndex = 0;
-  const MainContect({super.key});
+  const MainContent({super.key});
 
   @override
-  State<MainContect> createState() => _MainContectState();
+  State<MainContent> createState() => _MainContentState();
 }
 
-class _MainContectState extends State<MainContect> {
+class _MainContentState extends State<MainContent> {
   final padding = 8.0;
 
   final List<String> images = [

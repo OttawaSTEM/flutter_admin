@@ -34,7 +34,7 @@ class HomePage extends GetView<HomeController> {
         children: <Widget>[
           SideMenu(),
           VerticalDivider(thickness: 1, width: 1),
-          MainContect(),
+          MainContent(),
           // SubPanel1(),
           // SubPanel2(),
         ],
@@ -43,7 +43,7 @@ class HomePage extends GetView<HomeController> {
       //   children: <Widget>[
       //     SideMenu(),
       //     VerticalDivider(thickness: 1, width: 1),
-      //     MainContect(),
+      //     MainContent(),
       //   ],
       // ),
     );
